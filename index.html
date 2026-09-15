@@ -331,6 +331,48 @@
   .hero-photo-crossfade{ max-width:260px; height:340px; margin:0 auto; }
 }
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Libre+Caslon+Display&family=Public+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F5F4F0 !important;
+  --paper-2:#EAE7DE !important;
+  --ink:#14171C !important;
+  --ink-2:#3A3D42 !important;
+  --accent:#7A1F2B !important;
+  --accent-2:#9C7A3C !important;
+  --gold:#9C7A3C !important;
+  --brass:#7A1F2B !important;
+  --brass-light:#9C7A3C !important;
+  --line:#D8D4C9 !important;
+  --line-light:rgba(20,23,28,0.14) !important;
+  --cream-text:#F5F4F0 !important;
+  --serif:"Libre Caslon Display", Georgia, serif !important;
+  --sans:"Public Sans", -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+body, p, li, dd, .btn, nav a, input, textarea, button{
+  font-family:"Public Sans", -apple-system, sans-serif !important;
+}
+h1, h2, h3, .hero-v2-title, .practice-name, .team-name, .mark, .btn-v2-primary, .btn-v2-secondary{
+  font-family:"Libre Caslon Display", Georgia, serif !important;
+  letter-spacing:0 !important;
+}
+/* Kill the eyebrow-label tell entirely */
+.kicker, .folio, .hero-v2-eyebrow{
+  display:none !important;
+}
+.section-head, .about-body, .team-body, .contact-grid, .practice-item, .approach-grid{
+  grid-template-columns:1fr !important;
+}
+/* No all-caps tracked labels anywhere */
+*{ text-transform:none !important; }
+/* Flatten the hover-lift-on-everything card tell */
+.practice-item:hover{
+  transform:none !important;
+  box-shadow:none !important;
+}
+</style>
 </head>
 <body>
 
@@ -555,5 +597,14 @@
   }
 </script>
 
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  document.querySelectorAll('a, button').forEach(function(el){
+    if(el.children.length === 0){
+      el.textContent = el.textContent.replace(/\s*→\s*$/, '').trim();
+    }
+  });
+});
+</script>
 </body>
 </html>
