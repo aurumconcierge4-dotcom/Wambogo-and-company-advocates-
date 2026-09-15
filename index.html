@@ -317,25 +317,19 @@
   @media (max-width:900px){ .hero-v2-visual{ max-width:220px; margin:0 auto; } }
 
 
-.hero-photo-stack{ position:relative; width:100%; max-width:340px; margin-left:auto; }
-.hero-photo-primary{
-  width:100%; height:480px; object-fit:cover; display:block;
-  filter:grayscale(0.35) sepia(0.1) contrast(1.05);
-  border:1px solid var(--line);
+.hero-photo-crossfade{
+  position:relative; width:100%; max-width:340px; margin-left:auto;
+  height:480px; border:1px solid var(--line); overflow:hidden;
 }
-.hero-photo-secondary{
-  position:absolute; bottom:-28px; left:-44px;
-  width:58%; height:190px; object-fit:cover; display:block;
+.hero-photo-slide{
+  position:absolute; inset:0; width:100%; height:100%; object-fit:cover;
   filter:grayscale(0.35) sepia(0.1) contrast(1.05);
-  border:4px solid var(--paper);
-  box-shadow:0 14px 30px rgba(26,26,26,0.16);
+  opacity:0; transition:opacity 1.2s ease-in-out;
 }
+.hero-photo-slide.is-active{ opacity:1; }
 @media (max-width:900px){
-  .hero-photo-stack{ max-width:260px; margin:0 auto; }
-  .hero-photo-primary{ height:340px; }
-  .hero-photo-secondary{ left:-20px; bottom:-20px; height:140px; }
+  .hero-photo-crossfade{ max-width:260px; height:340px; margin:0 auto; }
 }
-
 </style>
 </head>
 <body>
@@ -373,9 +367,9 @@
       <p class="hero-v2-trust">Commercial Law &nbsp;·&nbsp; Employment &amp; Industrial Relations &nbsp;·&nbsp; Constitutional &amp; Human Rights &nbsp;·&nbsp; Criminal Law &nbsp;·&nbsp; Conveyancing &amp; Property</p>
     </div>
     <div class="hero-v2-visual" aria-hidden="true">
-      <div class="hero-photo-stack">
-        <img src="images/hero-1.jpg" alt="" class="hero-photo-primary">
-        <img src="images/hero-2.jpg" alt="" class="hero-photo-secondary">
+      <div class="hero-photo-crossfade">
+        <img src="images/hero-1.jpg" alt="" class="hero-photo-slide is-active">
+        <img src="images/hero-2.jpg" alt="" class="hero-photo-slide">
       </div>
     </div>
   </div>
@@ -521,6 +515,16 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
+(function(){
+  var slides = document.querySelectorAll('.hero-photo-slide');
+  if(slides.length < 2) return;
+  var i = 0;
+  setInterval(function(){
+    slides[i].classList.remove('is-active');
+    i = (i + 1) % slides.length;
+    slides[i].classList.add('is-active');
+  }, 4000);
+})();
 
   (function(){
     var titleEl = document.querySelector('.hero-v2-title');
