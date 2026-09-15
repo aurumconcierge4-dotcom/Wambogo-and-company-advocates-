@@ -388,6 +388,57 @@ h1, h2, h3, .hero-v2-title, .practice-name, .team-name, .mark, .btn-v2-primary, 
 .hero-v2-grid{ grid-template-columns:1fr !important; }
 .hero-v2-copy{ max-width:none !important; }
 </style>
+<style>
+:root{
+  --paper:#FAFAF8 !important;
+  --paper-2:#F0EEE8 !important;
+  --ink:#1A1A1A !important;
+  --ink-2:#3D3D3D !important;
+  --accent:#B08D4F !important;
+  --accent-2:#8C6D3F !important;
+  --gold:#B08D4F !important;
+  --brass:#B08D4F !important;
+  --brass-light:#C9A961 !important;
+  --navy:#0F1B2E !important;
+  --navy-2:#16273F !important;
+  --cream-text:#F0EDE5 !important;
+  --line:#E0DCD0 !important;
+  --line-light:rgba(240,237,229,0.16) !important;
+}
+
+.hero-v2, header.site-header:not(.scrolled), footer{
+  background:var(--navy) !important;
+  color:var(--cream-text) !important;
+}
+.hero-v2 .hero-v2-eyebrow{ color:var(--brass-light) !important; }
+.hero-v2 .hero-v2-title{ color:var(--cream-text) !important; }
+.hero-v2 .hero-v2-lede{ color:rgba(240,237,229,0.75) !important; }
+.hero-v2 .hero-v2-trust{ color:rgba(240,237,229,0.55) !important; border-top-color:rgba(240,237,229,0.18) !important; }
+.hero-v2 .btn-v2-primary{ background:var(--brass) !important; border-color:var(--brass) !important; color:var(--navy) !important; }
+.hero-v2 .btn-v2-secondary{ border-color:rgba(240,237,229,0.3) !important; color:var(--cream-text) !important; }
+
+header.site-header:not(.scrolled) .mark,
+header.site-header:not(.scrolled) nav a{ color:var(--cream-text) !important; }
+header.site-header:not(.scrolled) .mark-badge{ border-color:var(--cream-text) !important; color:var(--cream-text) !important; }
+header.site-header:not(.scrolled) .btn-header-cta{ border-color:var(--brass-light) !important; color:var(--brass-light) !important; }
+
+footer{ border-top:none !important; }
+footer, footer a{ color:rgba(240,237,229,0.7) !important; }
+
+.contact{ background:var(--navy-2) !important; color:var(--cream-text) !important; }
+.contact h2{ color:var(--cream-text) !important; }
+.contact-block dt{ color:rgba(240,237,229,0.55) !important; }
+.contact-block dd{ color:var(--cream-text) !important; }
+.contact-block a{ border-bottom-color:var(--brass-light) !important; }
+.contact-block a:hover{ color:var(--brass-light) !important; }
+.map-frame{ border-color:rgba(240,237,229,0.18) !important; }
+
+.about, .team{ background:var(--paper) !important; }
+.practice{ background:var(--paper-2) !important; color:var(--ink) !important; }
+.practice .lede-col p, .practice-desc, .practice-share small{ color:var(--ink-2) !important; }
+.practice h2, .practice-name{ color:var(--ink) !important; }
+.practice-share{ color:var(--accent) !important; }
+</style>
 </head>
 <body>
 
