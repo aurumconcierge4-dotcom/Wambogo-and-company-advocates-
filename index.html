@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wambogo &amp; Company Advocates — Nairobi</title>
+<meta name="description" content="Wambogo & Company Advocates is a Nairobi law firm practising commercial law, employment and industrial relations, constitutional and human rights law, criminal law, and conveyancing.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEAE1;
+    --paper-2:#E4E0D3;
+    --ink:#1B2430;
+    --ink-2:#2C3644;
+    --brass:#A9812C;
+    --brass-light:#C7A34E;
+    --maroon:#6B2A2E;
+    --cream-text:#F3EFE6;
+    --line: rgba(27,36,48,0.16);
+    --line-light: rgba(243,239,230,0.22);
+    --serif: "Fraunces", Georgia, serif;
+    --sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:var(--sans);
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img,svg{display:block;max-width:100%;}
+
+  ::selection{background:var(--brass-light); color:var(--ink);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{animation:none !important; transition:none !important; scroll-behavior:auto !important;}
+  }
+
+  .wrap{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 32px;
+  }
+  @media (max-width:640px){ .wrap{padding:0 20px;} }
+
+  /* ---------- Header ---------- */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(237,234,225,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);
+  }
+  .nav-inner{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 0;
+  }
+  .mark{
+    display:flex; align-items:center; gap:12px;
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:1.05rem;
+    letter-spacing:0.01em;
+  }
+  .mark-badge{
+    width:38px; height:38px;
+    border:1.5px solid var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif);
+    font-weight:600;
+    font-size:0.95rem;
+    flex-shrink:0;
+  }
+  nav ul{
+    list-style:none; display:flex; gap:34px;
+    margin:0; padding:0;
+  }
+  nav a{
+    text-decoration:none;
+    font-size:0.92rem;
+    font-weight:500;
+    color:var(--ink-2);
+    position:relative;
+    padding-bottom:4px;
+  }
+  nav a::after{
+    content:"";
+    position:absolute; left:0; bottom:0;
+    width:0; height:1px; background:var(--brass);
+    transition:width 0.25s ease;
+  }
+  nav a:hover::after{ width:100%; }
+  .nav-toggle{ display:none; }
+  @media (max-width:760px){
+    nav ul{ display:none; }
+  }
+
+  /* ---------- Hero ---------- */
+  .hero{
+    padding:96px 0 80px;
+    position:relative;
+    overflow:hidden;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.15fr 0.85fr;
+    gap:64px;
+    align-items:end;
+  }
+  @media (max-width:900px){
+    .hero-grid{ grid-template-columns:1fr; }
+  }
+  .kicker{
+    font-family:var(--sans);
+    font-size:0.85rem;
+    color:var(--brass);
+    font-weight:600;
+    margin:0 0 22px;
+    display:flex; align-items:center; gap:10px;
+  }
+  .kicker .rule{ width:28px; height:1px; background:var(--brass); display:inline-block; }
+
+  h1.hero-title{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(2.6rem, 5.6vw, 4.4rem);
+    line-height:1.04;
+    margin:0 0 28px;
+    letter-spacing:-0.01em;
+  }
+  .hero-lede{
+    font-size:1.08rem;
+    max-width:46ch;
+    color:var(--ink-2);
+    margin:0 0 36px;
+  }
+  .cta-row{ display:flex; gap:16px; flex-wrap:wrap; }
+  .btn{
+    display:inline-block;
+    padding:14px 28px;
+    font-size:0.92rem;
+    font-weight:600;
+    text-decoration:none;
+    border:1px solid var(--ink);
+    transition:background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  }
+  .btn-primary{ background:var(--ink); color:var(--cream-text); }
+  .btn-primary:hover{ background:var(--maroon); border-color:var(--maroon); }
+  .btn-ghost{ background:transparent; color:var(--ink); }
+  .btn-ghost:hover{ border-color:var(--brass); color:var(--brass); }
+
+  .hero-side{
+    border-left:1px solid var(--line);
+    padding-left:32px;
+  }
+  @media (max-width:900px){
+    .hero-side{ border-left:none; border-top:1px solid var(--line); padding-left:0; padding-top:28px; }
+  }
+  .hero-side p{
+    font-size:0.94rem;
+    color:var(--ink-2);
+    margin:0 0 18px;
+  }
+  .hero-side .stat{
+    font-family:var(--serif);
+    font-size:2rem;
+    font-weight:500;
+    color:var(--ink);
+    display:block;
+    margin-bottom:2px;
+  }
+  .stat-row{ display:flex; gap:36px; margin-top:10px; }
+
+  /* ---------- Section scaffolding ---------- */
+  section{ padding:88px 0; }
+  .section-head{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:40px;
+    margin-bottom:52px;
+  }
+  @media (max-width:760px){
+    .section-head{ grid-template-columns:1fr; gap:14px; }
+  }
+  .folio{
+    font-family:var(--serif);
+    font-size:0.95rem;
+    color:var(--brass);
+    font-weight:600;
+    align-self:start;
+  }
+  h2{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:clamp(1.9rem, 3.4vw, 2.6rem);
+    line-height:1.12;
+    margin:0;
+    max-width:16ch;
+  }
+  .lede-col p{
+    max-width:58ch;
+    color:var(--ink-2);
+    font-size:1rem;
+  }
+
+  hr.rule{
+    border:none; border-top:1px solid var(--line);
+    margin:0;
+  }
+
+  /* ---------- About ---------- */
+  .about{ background:var(--paper); }
+  .about-body{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:40px;
+  }
+  @media (max-width:760px){ .about-body{ grid-template-columns:1fr; } }
+  .about-copy p{
+    font-size:1.02rem;
+    color:var(--ink-2);
+    max-width:62ch;
+    margin:0 0 20px;
+  }
+  .about-copy p:first-child{
+    font-size:1.14rem;
+    color:var(--ink);
+  }
+
+  /* ---------- Practice areas ---------- */
+  .practice{ background:var(--ink); color:var(--cream-text); }
+  .practice .folio{ color:var(--brass-light); }
+  .practice h2{ color:var(--cream-text); }
+  .practice .lede-col p{ color:rgba(243,239,230,0.72); }
+
+  .practice-list{ border-top:1px solid var(--line-light); }
+  .practice-item{
+    display:grid;
+    grid-template-columns:220px 1fr auto;
+    gap:40px;
+    align-items:start;
+    padding:30px 0;
+    border-bottom:1px solid var(--line-light);
+  }
+  @media (max-width:760px){
+    .practice-item{ grid-template-columns:1fr; gap:8px; }
+  }
+  .practice-name{
+    font-family:var(--serif);
+    font-size:1.3rem;
+    font-weight:500;
+  }
+  .practice-desc{
+    color:rgba(243,239,230,0.72);
+    font-size:0.98rem;
+    max-width:56ch;
+  }
+  .practice-share{
+    font-family:var(--serif);
+    font-size:1.6rem;
+    color:var(--brass-light);
+    text-align:right;
+    white-space:nowrap;
+    align-self:center;
+  }
+  @media (max-width:760px){ .practice-share{ text-align:left; } }
+  .practice-share small{
+    display:block;
+    font-family:var(--sans);
+    font-size:0.68rem;
+    color:rgba(243,239,230,0.5);
+    font-weight:500;
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- Approach ---------- */
+  .approach-grid{
+    display:grid;
+    grid-template-columns:220px repeat(3, 1fr);
+    gap:40px;
+  }
+  @media (max-width:900px){
+    .approach-grid{ grid-template-columns:1fr; }
+  }
+  .approach-item{
+    border-top:1px solid var(--line);
+    padding-top:20px;
+  }
+  .approach-item h3{
+    font-family:var(--serif);
+    font-weight:500;
+    font-size:1.15rem;
+    margin:0 0 12px;
+  }
+  .approach-item p{
+    color:var(--ink-2);
+    font-size:0.95rem;
+    margin:0;
+  }
+
+  /* ---------- Team ---------- */
+  .team{ background:var(--paper-2); }
+  .team-body{
+    display:grid;
+    grid-template-columns:220px 1fr;
+    gap:40px;
+  }
+  @media (max-width:760px){ .team-body{ grid-template-columns:1fr; } }
+  .team-card{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:28px;
+    padding-bottom:32px;
+    margin-bottom:32px;
+    border-bottom:1px solid var(--line);
+  }
+  @media (max-width:600px){ .team-card{ grid-template-columns:1fr; } }
+  .team-photo{
+    width:104px; height:104px;
+    border:1px solid var(--ink);
+    display:flex; align-items:center; justify-content:center;
+    font-family:var(--serif);
+    font-size:1.6rem;
+    color:var(--ink);
+    background:var(--paper);
+  }
+  .team-name{
+    font-family:var(--serif);
+    font-size:1.3rem;
+    font-weight:500;
+    margin:0 0 2px;
+  }
+  .team-role{
+    color:var(--brass);
+    font-size:0.88rem;
+    font-weight:600;
+    margin:0 0 14px;
+  }
+  .team-bio{
+    color:var(--ink-2);
+    font-size:0.96rem;
+    max-width:58ch;
+    margin:0;
+  }
+  .team-note{
+    font-size:0.85rem;
+    color:var(--ink-2);
+    font-style:italic;
+    margin-top:-8px;
+  }
+
+  /* ---------- Contact ---------- */
+  .contact{ background:var(--ink); color:var(--cream-text); }
+  .contact .folio{ color:var(--brass-light); }
+  .contact h2{ color:var(--cream-text); }
+  .contact-grid{
+    display:grid;
+    grid-template-columns:220px 1fr 1fr;
+    gap:40px;
+  }
+  @media (max-width:900px){ .contact-grid{ grid-template-columns:1fr; } }
+  .contact-block dt{
+    font-size:0.78rem;
+    text-transform:uppercase;
+    letter-spacing:0.06em;
+    color:rgba(243,239,230,0.55);
+    margin:0 0 6px;
+  }
+  .contact-block dd{
+    margin:0 0 26px;
+    font-size:1.02rem;
+  }
+  .contact-block a{ text-decoration:none; border-bottom:1px solid var(--brass-light); }
+  .contact-block a:hover{ color:var(--brass-light); }
+  .map-frame{
+    border:1px solid var(--line-light);
+    height:100%;
+    min-height:260px;
+  }
+  .map-frame iframe{
+    width:100%; height:100%; min-height:260px; border:0; filter:grayscale(0.3) contrast(1.05);
+  }
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:32px 0;
+    border-top:1px solid var(--line);
+    font-size:0.82rem;
+    color:var(--ink-2);
+    display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;
+  }
+
+  /* ---------- Reveal ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{ opacity:1; transform:none; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap nav-inner">
+    <div class="mark">
+      <span class="mark-badge">W&amp;C</span>
+      Wambogo &amp; Company Advocates
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#about">The Firm</a></li>
+        <li><a href="#practice">Practice Areas</a></li>
+        <li><a href="#team">Our Team</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="kicker"><span class="rule"></span>Advocates of the High Court of Kenya · Nairobi</p>
+      <h1 class="hero-title">Counsel that reads the whole file before it reads the room.</h1>
+      <p class="hero-lede">Wambogo &amp; Company Advocates is a Nairobi law firm advising businesses, employers, employees, and individuals on commercial disputes, employment and industrial relations, property, and constitutional matters — with the same rigour whether the forum is a boardroom or the Employment and Labour Relations Court.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#contact">Book a consultation</a>
+        <a class="btn btn-ghost" href="#practice">View practice areas</a>
+      </div>
+    </div>
+    <div class="hero-side">
+      <p>Chambers at Hill Plaza, Upper Hill — among Nairobi's cluster of courts, chambers, and corporate counsel, a short walk from the Milimani Law Courts.</p>
+      <div class="stat-row">
+        <div>
+          <span class="stat">5</span>
+          practice areas
+        </div>
+        <div>
+          <span class="stat">1</span>
+          firm, direct access to your advocate
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about reveal" id="about">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="folio">01 — The Firm</span>
+      <h2>Deliberately sized to stay personal.</h2>
+    </div>
+    <div class="about-body">
+      <div></div>
+      <div class="about-copy">
+        <p>Wambogo &amp; Company Advocates is a Nairobi-based law firm operating from Hill Plaza on Upper Hill Close. The firm was built on a simple premise: clients are better served by advocates who handle their own files, know the facts cold, and are reachable directly — not routed through layers of associates.</p>
+        <p>That approach shows in how the firm works: commercial and employment matters are prepared with the same document discipline as litigation — witness statements, verifying affidavits, and evidence bundles built to withstand scrutiny, not just to be filed. Clients get a firm that treats paperwork as seriously as advocacy, because in Kenyan courts, it usually decides the case before anyone stands up to argue it.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="practice reveal" id="practice">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="folio">02 — Practice Areas</span>
+      <h2>Five areas, one standard of preparation.</h2>
+    </div>
+    <div class="practice-list">
+
+      <div class="practice-item">
+        <div class="practice-name">Commercial Law</div>
+        <div class="practice-desc">Contract disputes, commercial arbitration, corporate advisory, and negotiation for businesses and individuals — the firm's core practice.</div>
+        <div class="practice-share">50<small>of caseload</small></div>
+      </div>
+
+      <div class="practice-item">
+        <div class="practice-name">Industrial Relations &amp; Employment Law</div>
+        <div class="practice-desc">Unfair and constructive dismissal claims, statutory deduction disputes, employment contracts, and representation before the Employment and Labour Relations Court.</div>
+        <div class="practice-share">20<small>of caseload</small></div>
+      </div>
+
+      <div class="practice-item">
+        <div class="practice-name">Constitutional &amp; Human Rights Law</div>
+        <div class="practice-desc">Petitions concerning fair administrative action, human dignity, and fair labour practices under the Constitution of Kenya.</div>
+        <div class="practice-share">10<small>of caseload</small></div>
+      </div>
+
+      <div class="practice-item">
+        <div class="practice-name">Criminal Law</div>
+        <div class="practice-desc">Defence and advisory work across the Magistrates' and High Courts.</div>
+        <div class="practice-share">10<small>of caseload</small></div>
+      </div>
+
+      <div class="practice-item">
+        <div class="practice-name">Conveyancing, Real Estate &amp; Property</div>
+        <div class="practice-desc">Sale and transfer of land, lease agreements, and due diligence on property transactions.</div>
+        <div class="practice-share">10<small>of caseload</small></div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="reveal">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="folio">03 — Approach</span>
+      <h2>How the firm works a file.</h2>
+    </div>
+    <div class="approach-grid">
+      <div></div>
+      <div class="approach-item">
+        <h3>Direct access</h3>
+        <p>You deal with the advocate handling your matter, not a rotating cast of juniors — from the first consultation to the final judgment.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Document-first</h3>
+        <p>Pleadings, affidavits, and evidence bundles are built to be tested — cross-referenced, dated, and defensible before they're ever filed.</p>
+      </div>
+      <div class="approach-item">
+        <h3>Plain terms</h3>
+        <p>Fee arrangements — flat, contingency, or hybrid — are set out and agreed before work begins, with no surprises at settlement.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="team reveal" id="team">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="folio">04 — Our Team</span>
+      <h2>Counsel on record.</h2>
+    </div>
+    <div class="team-body">
+      <div></div>
+      <div>
+        <div class="team-card">
+          <div class="team-photo">W</div>
+          <div>
+            <p class="team-name">Wambogo</p>
+            <p class="team-role">Managing Partner</p>
+            <p class="team-bio">Leads the firm's commercial and employment law practice, with a litigation record spanning the Magistrates' Courts and the Employment and Labour Relations Court in Nairobi.</p>
+          </div>
+        </div>
+        <p class="team-note">Full biography and additional advocates to be added — send over details on qualifications, memberships, and years of call for a complete profile.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="contact reveal" id="contact">
+  <div class="wrap">
+    <div class="section-head">
+      <span class="folio">05 — Contact</span>
+      <h2>Speak to an advocate.</h2>
+    </div>
+    <div class="contact-grid">
+      <div></div>
+      <dl class="contact-block">
+        <dt>Chambers</dt>
+        <dd>Hill Plaza, Ground Floor<br>Upper Hill Close, off Ngong Road<br>P.O. Box 49140–00100<br>Nairobi, Kenya</dd>
+        <dt>Telephone</dt>
+        <dd><a href="tel:+254701476862">0701 476 862</a> &nbsp;/&nbsp; <a href="tel:+254780046922">0780 046 922</a></dd>
+        <dt>Email</dt>
+        <dd><a href="mailto:wambogoadvocates@gmail.com">wambogoadvocates@gmail.com</a></dd>
+      </dl>
+      <div class="map-frame">
+        <iframe src="https://maps.google.com/maps?q=Hill%20Plaza%2C%20Upper%20Hill%20Close%2C%20off%20Ngong%20Road%2C%20Nairobi&t=&z=15&ie=UTF8&iwloc=&output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap" style="display:flex; justify-content:space-between; width:100%; flex-wrap:wrap; gap:12px;">
+    <span>© <span id="year"></span> Wambogo &amp; Company Advocates. Advocates of the High Court of Kenya.</span>
+    <span>Hill Plaza, Upper Hill, Nairobi</span>
+  </div>
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+
+</body>
+</html>
