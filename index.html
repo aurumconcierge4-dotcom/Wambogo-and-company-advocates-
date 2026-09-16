@@ -483,6 +483,16 @@ footer, footer a{ color:rgba(240,237,229,0.7) !important; }
   .nav-right .btn-header-cta{ display:none; }
   .nav-inner{ position:relative; }
 }
+
+@media (max-width:760px){
+  .nav-right nav{
+    background:#FFFFFF !important;
+    z-index:100 !important;
+  }
+  .nav-right nav ul li a{
+    color:#1A1A1A !important;
+  }
+}
 </style>
 </head>
 <body>
@@ -553,31 +563,26 @@ footer, footer a{ color:rgba(240,237,229,0.7) !important; }
       <div class="practice-item">
         <div class="practice-name">Commercial Law</div>
         <div class="practice-desc">Advisory and representation across commercial disputes, contracts, negotiations, arbitration and corporate affairs. We act for parties at every stage — structuring the transaction, resolving the dispute, or enforcing the obligation — with attention fixed on the commercial objective behind the legal problem.</div>
-        <div class="practice-share">50<small>of caseload</small></div>
       </div>
 
       <div class="practice-item">
         <div class="practice-name">Employment &amp; Industrial Relations</div>
         <div class="practice-desc">Employment relationships are governed by contracts, statutes and court decisions — and most disputes turn on what was documented, when, and by whom. We advise on employment contracts, workplace disputes, termination, statutory compliance, and represent clients before the Employment and Labour Relations Court.</div>
-        <div class="practice-share">20<small>of caseload</small></div>
       </div>
 
       <div class="practice-item">
         <div class="practice-name">Constitutional &amp; Human Rights</div>
         <div class="practice-desc">Where rights are engaged — by state action or by private conduct — we provide representation and advisory work across constitutional rights, fair administrative action, fair labour practices and related public-law matters.</div>
-        <div class="practice-share">10<small>of caseload</small></div>
       </div>
 
       <div class="practice-item">
         <div class="practice-name">Criminal Law</div>
         <div class="practice-desc">A criminal charge requires immediate, focused defence. We represent clients in proceedings before the Magistrates' Courts and the High Court, from the earliest stages through conclusion, together with related advisory work.</div>
-        <div class="practice-share">10<small>of caseload</small></div>
       </div>
 
       <div class="practice-item">
         <div class="practice-name">Conveyancing, Real Estate &amp; Property</div>
         <div class="practice-desc">Property transactions carry lasting consequences — a defective title or a poorly drafted lease can outlive the deal itself. We handle sale and transfer of property, leases, documentation and due diligence with the care the asset deserves.</div>
-        <div class="practice-share">10<small>of caseload</small></div>
       </div>
 
     </div>
@@ -721,17 +726,23 @@ document.addEventListener('DOMContentLoaded', function(){
   var toggle = document.getElementById('menuToggle');
   var nav = document.getElementById('siteNav');
   if(!toggle || !nav) return;
+  function closeNav(){
+    nav.style.maxHeight = '0px';
+    nav.classList.remove('is-open');
+    toggle.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }
+  function openNav(){
+    nav.style.maxHeight = nav.scrollHeight + 'px';
+    nav.classList.add('is-open');
+    toggle.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+  }
   toggle.addEventListener('click', function(){
-    var open = nav.classList.toggle('is-open');
-    toggle.classList.toggle('is-open', open);
-    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if(nav.classList.contains('is-open')){ closeNav(); } else { openNav(); }
   });
   nav.querySelectorAll('a').forEach(function(link){
-    link.addEventListener('click', function(){
-      nav.classList.remove('is-open');
-      toggle.classList.remove('is-open');
-      toggle.setAttribute('aria-expanded', 'false');
-    });
+    link.addEventListener('click', closeNav);
   });
 })();
 </script>\n</body>
