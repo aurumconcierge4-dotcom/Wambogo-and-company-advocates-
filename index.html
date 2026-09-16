@@ -438,6 +438,45 @@ footer, footer a{ color:rgba(240,237,229,0.7) !important; }
 .practice .lede-col p, .practice-desc, .practice-share small{ color:var(--ink-2) !important; }
 .practice h2, .practice-name{ color:var(--ink) !important; }
 .practice-share{ color:var(--accent) !important; }
+
+.menu-toggle{
+  display:none;
+  flex-direction:column;
+  justify-content:center;
+  gap:5px;
+  width:32px; height:32px;
+  background:none; border:none; cursor:pointer;
+  padding:0;
+}
+.menu-toggle span{
+  display:block; width:100%; height:2px;
+  background:currentColor;
+  transition:transform 0.25s ease, opacity 0.25s ease;
+}
+.menu-toggle.is-open span:nth-child(1){ transform:translateY(7px) rotate(45deg); }
+.menu-toggle.is-open span:nth-child(2){ opacity:0; }
+.menu-toggle.is-open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
+
+@media (max-width:760px){
+  .menu-toggle{ display:flex; color:inherit; }
+  .nav-right nav{
+    display:block;
+    position:absolute;
+    top:100%; left:0; right:0;
+    background:var(--paper);
+    border-bottom:1px solid var(--line);
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease;
+  }
+  .nav-right nav.is-open{ max-height:320px; }
+  .nav-right nav ul{
+    flex-direction:column; gap:0; padding:8px 32px 20px;
+  }
+  .nav-right nav ul li{ padding:10px 0; border-bottom:1px solid var(--line); }
+  .nav-right .btn-header-cta{ display:none; }
+  .nav-inner{ position:relative; }
+}
 </style>
 </head>
 <body>
@@ -445,11 +484,10 @@ footer, footer a{ color:rgba(240,237,229,0.7) !important; }
 <header class="site-header" id="siteHeader">
   <div class="wrap nav-inner">
     <div class="mark">
-      <span class="mark-badge">W&amp;C</span>
       Wambogo &amp; Company Advocates
     </div>
     <div class="nav-right">
-      <nav>
+      <nav id="siteNav">
         <ul>
           <li><a href="#about">The Firm</a></li>
           <li><a href="#practice">Practice Areas</a></li>
@@ -458,6 +496,9 @@ footer, footer a{ color:rgba(240,237,229,0.7) !important; }
         </ul>
       </nav>
       <a class="btn-header-cta" href="#contact">Consult an Advocate</a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </div>
 </header>
@@ -669,5 +710,23 @@ document.addEventListener('DOMContentLoaded', function(){
   });
 });
 </script>
-</body>
+<script>
+(function(){
+  var toggle = document.getElementById('menuToggle');
+  var nav = document.getElementById('siteNav');
+  if(!toggle || !nav) return;
+  toggle.addEventListener('click', function(){
+    var open = nav.classList.toggle('is-open');
+    toggle.classList.toggle('is-open', open);
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  nav.querySelectorAll('a').forEach(function(link){
+    link.addEventListener('click', function(){
+      nav.classList.remove('is-open');
+      toggle.classList.remove('is-open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+})();
+</script>\n</body>
 </html>
