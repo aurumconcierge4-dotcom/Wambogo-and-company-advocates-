@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://umconcierge4.workers.dev/sitemap.xml
+Sitemap: https://wambogo-and-company-advocates.aurumconcierge4.workers.dev/sitemap.xml
