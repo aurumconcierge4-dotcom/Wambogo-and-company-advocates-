@@ -374,17 +374,23 @@ h1, h2, h3, .hero-v2-title, .practice-name, .team-name, .mark, .btn-v2-primary, 
 }
 
 .about-body{ grid-template-columns:1fr !important; }
-.about-image{
-  margin-bottom:32px;
-  margin-left:calc(-50vw + 50%);
-  margin-right:calc(-50vw + 50%);
-  width:100vw;
+@media (max-width:760px){
+  .about-image{
+    margin-bottom:32px;
+    margin-left:calc(-50vw + 50%);
+    margin-right:calc(-50vw + 50%);
+    width:100vw;
+  }
 }
 .about-image img{
   width:100%; max-width:none; height:460px; object-fit:cover;
   filter:grayscale(0.3) sepia(0.08) contrast(1.05);
   border:none;
   display:block;
+}
+@media (min-width:761px){
+  .about-image{ margin-bottom:0; }
+  .about-image img{ height:100%; min-height:420px; }
 }
 @media (min-width:761px){
   .about-body{ grid-template-columns:480px 1fr !important; gap:40px; }
