@@ -458,7 +458,13 @@ footer, footer a{ color:rgba(240,237,229,0.7) !important; }
 .menu-toggle.is-open span:nth-child(3){ transform:translateY(-7px) rotate(-45deg); }
 
 @media (max-width:760px){
-  .menu-toggle{ display:flex; color:inherit; }
+  .menu-toggle{
+    display:flex; color:inherit;
+    position:absolute; left:20px; top:50%; transform:translateY(-50%);
+    order:-1; z-index:2;
+  }
+  .nav-inner{ position:relative; padding-left:56px; }
+  .mark{ order:1; }
   .nav-right nav{
     display:block;
     position:absolute;
