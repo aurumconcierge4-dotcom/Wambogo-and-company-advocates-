@@ -416,10 +416,10 @@ h1, h2, h3, .hero-v2-title, .practice-name, .team-name, .mark, .btn-v2-primary, 
 }
 @media (min-width:761px){
   .about-image{ margin-bottom:0; }
-  .about-image img{ height:100%; min-height:420px; }
+  .about-image img{ height:auto; width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 20%; min-height:0; }
 }
 @media (min-width:761px){
-  .about-body{ grid-template-columns:480px 1fr !important; gap:40px; }
+  .about-body{ grid-template-columns:480px 1fr !important; gap:40px; align-items:start; }
   .about-image{ margin-bottom:0; }
 }
 
