@@ -432,11 +432,11 @@ h1, h2, h3, .hero-v2-title, .practice-name, .team-name, .mark, .btn-v2-primary, 
   --paper-2:#F0EEE8 !important;
   --ink:#1A1A1A !important;
   --ink-2:#3D3D3D !important;
-  --accent:#B08D4F !important;
-  --accent-2:#8C6D3F !important;
-  --gold:#B08D4F !important;
-  --brass:#B08D4F !important;
-  --brass-light:#C9A961 !important;
+  --accent:#C9A961 !important;
+  --accent-2:#B08D4F !important;
+  --gold:#C9A961 !important;
+  --brass:#C9A961 !important;
+  --brass-light:#E3CD8F !important;
   --navy:#1B2A1E !important;
   --navy-2:#22331F !important;
   --cream-text:#F0EDE5 !important;
@@ -561,6 +561,19 @@ footer, footer a{ color:rgba(240,237,229,0.7) !important; }
 }
 </style>
 <meta name="google-site-verification" content="OYoYNRKp7G06ntwm-GRoFVS5smLxQDBK2o3mbHoq0Ts" />
+<style>
+.hero-v2{ position:relative; }
+.hero-v2::before{
+  content:"";
+  position:absolute; inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  opacity:0.06;
+  mix-blend-mode:overlay;
+  pointer-events:none;
+  z-index:0;
+}
+.hero-v2-grid{ position:relative; z-index:1; }
+</style>
 </head>
 <body>
 
