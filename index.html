@@ -608,6 +608,37 @@ footer, footer a{ color:rgba(240,237,229,0.7) !important; }
   .practice-item::before{ transform:scaleY(1) !important; }
 }
 </style>
+<style>
+.practice-list{ counter-reset:practice-counter; }
+.practice-item{ counter-increment:practice-counter; overflow:hidden; }
+.practice-item::after{
+  content:counter(practice-counter, upper-roman);
+  position:absolute;
+  right:8px; top:50%;
+  transform:translateY(-50%);
+  font-family:var(--serif);
+  font-size:6.5rem;
+  font-weight:600;
+  color:transparent;
+  -webkit-text-stroke:1px var(--accent);
+  opacity:0.16;
+  pointer-events:none;
+  line-height:1;
+  transition:opacity 0.35s ease, transform 0.35s ease;
+  z-index:0;
+}
+@media (hover:hover){
+  .practice-item:hover::after{ opacity:0.32; transform:translateY(-50%) scale(1.05); }
+}
+.practice-item .practice-name,
+.practice-item .practice-desc{ position:relative; z-index:1; }
+@media (max-width:760px){
+  .practice-item::after{ font-size:4rem; opacity:0.10; right:4px; }
+}
+@media (prefers-reduced-motion: reduce){
+  .practice-item::after{ transition:none; }
+}
+</style>
 </head>
 <body>
 
